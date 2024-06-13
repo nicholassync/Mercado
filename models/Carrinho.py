@@ -3,13 +3,13 @@ class Carrinho:
         self.__produtos = []
 
     def adicionar_produto(self, produto):
-        self.__produtos.append(produto)
+        self.produtos.append(produto)
 
     def remover_produto(self, produto):
-        self.__produtos.remove(produto)
+        self.produtos.remove(produto)
 
     def listar_produtos(self):
-        return self.__produtos
+        return self.produtos
 
     def limpar_carrinho(self):
-        self.__produtos = []
+        self.produtos = []

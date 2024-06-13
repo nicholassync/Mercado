@@ -1,31 +1,30 @@
 
 from enum import Enum
 
-class Setor(Enum):
-    ACOUGUE = 'Açougue'
-    FRIOS_LATICINIOS = 'Frios e laticínios'
-    ADEGA_BEBIDAS = 'Adega e bebidas'
-    HIGIENE_LIMPEZA = 'Higiene e limpeza'
-    HORTIFRUTI_MERCEARIA = 'Hortifruti e mercearia'
-    PADARIA = 'Padaria'
-    ENLATADOS = 'Enlatados'
-    CEREAIS = 'Cereais'
 
-class TipoProduto(Enum):
-    ALIMENTICIO = 'Alimentício'
-    PRODUTO_LIMPEZA = 'Produto de limpeza'
-    OUTROS = 'Outros'
     
-class Produto:
-    def __init__(self, id, codigo, nome, preco, quantidade, setor, tipo):
-        self.__id = id
-        self.__codigo = codigo
-        self.__nome = nome
-        self.__preco = preco
-        self.__quantidade = quantidade
-        self.__setor = setor  # Instância da enumeração Setor
-        self.__tipo = tipo  # Instância da enumeração TipoProduto
+class  Produto:
+    def __init__(self):
+        self.__id = None
+        self.__codigo = None
+        self.__nome = None
+        self.__preco = None
+        self.__quantidade = None
+        self.__setor = None  
+        self.__tipo = None
+        
+    def get_tipo(self):
+        return self.__tipo
 
+    def set_tipo(self, tipo):
+        self.__tipo = tipo
+        
+    def get_setor(self):
+        return self.__setor
+
+    def set_setor(self, setor):
+        self.__setor = setor
+        
     def get_id(self):
         return self.__id
 
@@ -56,20 +55,3 @@ class Produto:
     def set_quantidade(self, quantidade):
         self.__quantidade = quantidade
 
-    def get_setor(self):
-        return self.__setor
-
-    def set_setor(self, setor):
-        if isinstance(setor, Setor):
-            self.__setor = setor
-        else:
-            raise ValueError("Setor deve ser uma instância de Setor.")
-
-    def get_tipo(self):
-        return self.__tipo
-
-    def set_tipo(self, tipo):
-        if isinstance(tipo, TipoProduto):
-            self.__tipo = tipo
-        else:
-            raise ValueError("Tipo deve ser uma instância de TipoProduto.")

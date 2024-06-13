@@ -1,32 +1,18 @@
-
-
-
 class Pedido:
-    def __init__(self, id ,cliente  , produtos, formapagamento):
-        self.__cliente = cliente
-        self.__id = id
-        self.__produtos = produtos
-        self.__formapagamento = formapagamento
-        
+    def __init__(self, cliente_id, produtoNome, quantidade, valor):
+        self.__cliente_id = cliente_id
+        self.__produtoNome = produtoNome
+        self.__quantidade = quantidade
+        self.__valor = valor
 
-    
-    def set_formapagamento(self, formapagamento):
-        self.__cliente = formapagamento
+    def get_cliente_id(self):
+        return self.__cliente_id
 
-    def get_formapagamento(self):
-        return self.formapagamento
-    
-    def get_cliente(self):
-        return self.__cliente
-    def get_Id(self):
-        return self.__id
+    def get_produto(self):
+        return self.__produtoNome
 
-    def set_cliente(self, cliente):
-        self.__cliente = cliente
+    def get_quantidade(self):
+        return self.__quantidade
 
-    def get_produtos(self):
-        return self.__produtos
-
-    def set_produtos(self, produtos):
-        self.__produtos = produtos
-    
+    def get_valor(self):
+        return self.__valor
